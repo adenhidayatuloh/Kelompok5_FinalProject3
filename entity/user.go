@@ -18,7 +18,7 @@ type User struct {
 	FullName  string `gorm:"not null"`
 	Email     string `gorm:"uniqueIndex;not null"`
 	Password  string `gorm:"not null"`
-	Role      string `gorm:"not null"`
+	Role      string `gorm:"not null;CHECK (role IN ('admin', 'member'))"`
 	Tasks     []Task `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	CreatedAt time.Time
 	UpdatedAt time.Time

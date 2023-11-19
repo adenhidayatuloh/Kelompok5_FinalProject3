@@ -42,7 +42,7 @@ func (a *authService) Authentication() gin.HandlerFunc {
 		fmt.Print(result)
 		_ = result
 
-		ctx.Set("userData", &user)
+		ctx.Set("userData", result)
 		ctx.Next()
 	}
 }

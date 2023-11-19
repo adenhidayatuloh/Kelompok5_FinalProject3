@@ -3,6 +3,7 @@ package service
 import (
 	"finalProject3/dto"
 	"finalProject3/entity"
+	"finalProject3/pkg"
 	"finalProject3/pkg/errs"
 	"finalProject3/repository/userrepository"
 	"fmt"
@@ -24,6 +25,12 @@ func NewUserService(userRepo userrepository.UserRepository) UserService {
 }
 
 func (u *userService) Register(payload *dto.RegisterRequest) (*dto.RegisterResponse, errs.MessageErr) {
+
+	err := pkg.ValidateStruct(payload)
+
+	if err != nil {
+		return nil, err
+	}
 
 	user := entity.User{
 		FullName: payload.FullName,
@@ -52,6 +59,13 @@ func (u *userService) Register(payload *dto.RegisterRequest) (*dto.RegisterRespo
 }
 
 func (u *userService) Login(payload *dto.LoginRequest) (*dto.LoginResponse, errs.MessageErr) {
+
+	err := pkg.ValidateStruct(payload)
+
+	if err != nil {
+		return nil, err
+	}
+
 	user, err := u.userRepo.GetUserByEmail(payload.Email)
 	if err != nil {
 		return nil, err
@@ -73,6 +87,12 @@ func (u *userService) Login(payload *dto.LoginRequest) (*dto.LoginResponse, errs
 }
 
 func (u *userService) UpdateUser(user *entity.User, payload *dto.UpdateUserRequest) (*dto.UpdateUserResponse, errs.MessageErr) {
+
+	err := pkg.ValidateStruct(payload)
+
+	if err != nil {
+		return nil, err
+	}
 
 	newUser := entity.User{
 		FullName: payload.FullName,
