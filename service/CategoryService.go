@@ -1,11 +1,11 @@
 package service
 
 import (
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/dto"
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg"
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
-	categoryrepository "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/categoryRepository"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/dto"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/entity"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/pkg"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/pkg/errs"
+	categoryrepository "github.com/adenhidayatuloh/Kelompok5_FinalProject3/repository/categoryRepository"
 )
 
 type CategoryService interface {

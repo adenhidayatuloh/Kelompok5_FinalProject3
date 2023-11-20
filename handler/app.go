@@ -4,11 +4,11 @@ import (
 	"log"
 	"os"
 
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/infra/postgres"
-	categorypostgres "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/categoryRepository/categoryPostgres"
-	taskpostgres "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/taskRepository/taskPostgres"
-	userpostgres "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/userrepository/userPostgres"
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/service"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/infra/postgres"
+	categorypostgres "github.com/adenhidayatuloh/Kelompok5_FinalProject3/repository/categoryRepository/categoryPostgres"
+	taskpostgres "github.com/adenhidayatuloh/Kelompok5_FinalProject3/repository/taskRepository/taskPostgres"
+	userpostgres "github.com/adenhidayatuloh/Kelompok5_FinalProject3/repository/userrepository/userPostgres"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/service"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/joho/godotenv/autoload"

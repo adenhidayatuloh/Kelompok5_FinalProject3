@@ -4,11 +4,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/dto"
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/service"
-
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/dto"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/entity"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/pkg/errs"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/service"
 	"github.com/gin-gonic/gin"
 )
 

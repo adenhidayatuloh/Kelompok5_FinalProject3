@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
-	taskrepository "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/taskRepository"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/entity"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/pkg/errs"
+	taskrepository "github.com/adenhidayatuloh/Kelompok5_FinalProject3/repository/taskRepository"
 	"gorm.io/gorm"
 )
 

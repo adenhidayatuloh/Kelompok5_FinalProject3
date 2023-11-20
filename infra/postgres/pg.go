@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
+	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/entity"
 	_ "github.com/joho/godotenv/autoload"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

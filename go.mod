@@ -1,4 +1,4 @@
-module github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3
+module github.com/adenhidayatuloh/Kelompok5_FinalProject3
 
 go 1.20
 
