@@ -39,6 +39,12 @@ func (u *userService) Register(payload *dto.RegisterRequest) (*dto.RegisterRespo
 		Password: payload.Password,
 	}
 
+	_, checkEmail := u.userRepo.GetUserByEmail(user.Email)
+
+	if checkEmail == nil {
+		return nil, errs.NewBadRequest("email already exists")
+	}
+
 	if err := user.HashPassword(); err != nil {
 		return nil, err
 	}

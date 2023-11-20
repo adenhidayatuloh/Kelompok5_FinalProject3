@@ -11,5 +11,5 @@ type Task struct {
 	CategoryID  uint
 	Status      bool
 	UserID      uint
-	Category    Category
+	User        User
 }

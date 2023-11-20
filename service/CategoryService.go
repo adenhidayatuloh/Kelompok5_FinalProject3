@@ -91,7 +91,7 @@ func (c *categoryService) GetAllCategories() ([]dto.GetAllCategoriesResponse, er
 				Description: eachTask.Description,
 				UserID:      eachTask.UserID,
 				CategoryID:  eachTask.CategoryID,
-				CreatedAt:   eachCategories.CreatedAt,
+				CreatedAt:   eachTask.CreatedAt,
 				UpdatedAt:   eachTask.UpdatedAt,
 			}
 			TaskResult = append(TaskResult, Task)
