@@ -1,11 +1,12 @@
 package entity
 
 import (
-	"finalProject3/pkg/errs"
 	"fmt"
 	"log"
 	"strings"
 	"time"
+
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
 
 	"github.com/dgrijalva/jwt-go"
 	"golang.org/x/crypto/bcrypt"
@@ -38,9 +39,7 @@ func (u *User) HashPassword() errs.MessageErr {
 func (u *User) ComparePassword(password string) errs.MessageErr {
 	err := bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(password))
 
-	if err == nil {
-		fmt.Println("Password match!")
-	} else {
+	if err != nil {
 		fmt.Println("Password doesn't match:", err)
 		return errs.NewBadRequest("Password is not valid!")
 	}

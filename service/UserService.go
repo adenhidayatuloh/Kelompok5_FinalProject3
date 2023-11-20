@@ -1,12 +1,11 @@
 package service
 
 import (
-	"finalProject3/dto"
-	"finalProject3/entity"
-	"finalProject3/pkg"
-	"finalProject3/pkg/errs"
-	"finalProject3/repository/userrepository"
-	"fmt"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/dto"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/userrepository"
 )
 
 type UserService interface {
@@ -76,7 +75,6 @@ func (u *userService) Login(payload *dto.LoginRequest) (*dto.LoginResponse, errs
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(user)
 
 	if err := user.ComparePassword(payload.Password); err != nil {
 		return nil, err

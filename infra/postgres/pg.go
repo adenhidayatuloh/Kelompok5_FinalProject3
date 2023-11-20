@@ -2,20 +2,22 @@ package postgres
 
 import (
 	"errors"
-	"finalProject3/entity"
 	"fmt"
 	"log"
+	"os"
 
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
+	_ "github.com/joho/godotenv/autoload"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 var (
-	host     = "localhost"
-	port     = "5432"
-	user     = "postgres"
-	password = "postgres"
-	dbName   = "db_finalproject_3"
+	host     = os.Getenv("DB_HOST")
+	port     = os.Getenv("DB_PORT")
+	user     = os.Getenv("DB_USER")
+	password = os.Getenv("DB_PASSWORD")
+	dbname   = os.Getenv("DB_NAME")
 	db       *gorm.DB
 	err      error
 )
@@ -28,7 +30,7 @@ func GetDBConfig() gorm.Dialector {
 		port,
 		user,
 		password,
-		dbName,
+		dbname,
 	)
 
 	return postgres.Open(dbConfig)

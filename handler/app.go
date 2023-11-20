@@ -1,20 +1,24 @@
 package handler
 
 import (
-	"finalProject3/infra/postgres"
-	categorypostgres "finalProject3/repository/categoryRepository/categoryPostgres"
-	taskpostgres "finalProject3/repository/taskRepository/taskPostgres"
-	userpostgres "finalProject3/repository/userrepository/userPostgres"
-	"finalProject3/service"
 	"log"
+	"os"
+
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/infra/postgres"
+	categorypostgres "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/categoryRepository/categoryPostgres"
+	taskpostgres "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/taskRepository/taskPostgres"
+	userpostgres "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/userrepository/userPostgres"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/service"
 
 	"github.com/gin-gonic/gin"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func StartApp() {
 	db := postgres.GetDBInstance()
+	gin.SetMode(gin.ReleaseMode)
 
-	port := "8080"
+	port := os.Getenv("PORT")
 	route := gin.Default()
 
 	userRepo := userpostgres.NewUserPG(db)

@@ -1,12 +1,12 @@
 package taskpostgres
 
 import (
-	"finalProject3/entity"
-	"finalProject3/pkg/errs"
-	taskrepository "finalProject3/repository/taskRepository"
 	"fmt"
 	"log"
 
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
+	taskrepository "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/taskRepository"
 	"gorm.io/gorm"
 )
 

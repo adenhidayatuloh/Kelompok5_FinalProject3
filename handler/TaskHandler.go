@@ -1,12 +1,13 @@
 package handler
 
 import (
-	"finalProject3/dto"
-	"finalProject3/entity"
-	"finalProject3/pkg/errs"
-	"finalProject3/service"
 	"net/http"
 	"strconv"
+
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/dto"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/service"
 
 	"github.com/gin-gonic/gin"
 )

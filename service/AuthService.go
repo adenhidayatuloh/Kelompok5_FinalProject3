@@ -1,12 +1,12 @@
 package service
 
 import (
-	"finalProject3/entity"
-	"finalProject3/pkg/errs"
-	taskrepository "finalProject3/repository/taskRepository"
-	"finalProject3/repository/userrepository"
-	"fmt"
 	"strconv"
+
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
+	taskrepository "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/taskRepository"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/userrepository"
 
 	"github.com/gin-gonic/gin"
 )
@@ -42,9 +42,6 @@ func (a *authService) Authentication() gin.HandlerFunc {
 			ctx.AbortWithStatusJSON(err.StatusCode(), err)
 			return
 		}
-
-		fmt.Print(result)
-		_ = result
 
 		ctx.Set("userData", result)
 		ctx.Next()

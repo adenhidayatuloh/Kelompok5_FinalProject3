@@ -1,7 +1,7 @@
 package main
 
 import (
-	"finalProject3/handler"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/handler"
 )
 
 func main() {

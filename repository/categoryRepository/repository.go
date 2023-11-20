@@ -1,8 +1,8 @@
 package categoryrepository
 
 import (
-	"finalProject3/entity"
-	"finalProject3/pkg/errs"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
 )
 
 type CategoryRepository interface {

@@ -1,12 +1,12 @@
 package categorypostgres
 
 import (
-	"finalProject3/entity"
-	"finalProject3/pkg/errs"
-	categoryrepository "finalProject3/repository/categoryRepository"
 	"fmt"
 	"log"
 
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/entity"
+	"github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/pkg/errs"
+	categoryrepository "github.com/adenhidayatuloh/glng_ks08_Kelompok5_final_Project_3/repository/categoryRepository"
 	"gorm.io/gorm"
 )
 
