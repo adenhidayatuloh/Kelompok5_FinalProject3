@@ -1,5 +1,11 @@
 # glng_ks08_Kelompok5_final_Project_3
 
+Admin data :
+FullName: "admin",
+Email: "admin@gmail.com",
+Password: "admin12345",
+Role: "admin",
+
 //Anggota :
 
 Aden Hidayatuloh (GLNG-KS08-011)
