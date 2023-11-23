@@ -1,8 +1,10 @@
 package categorypostgres
 
 import (
+	"errors"
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/entity"
 	"github.com/adenhidayatuloh/Kelompok5_FinalProject3/pkg/errs"
@@ -41,9 +43,16 @@ func (c *categoryPG) GetAllCategories() ([]entity.Category, errs.MessageErr) {
 func (c *categoryPG) GetCategoryByID(id uint) (*entity.Category, errs.MessageErr) {
 	var category entity.Category
 
-	if err := c.db.First(&category, id).Error; err != nil {
+	err := c.db.First(&category, id).Error
+
+	if errors.Is(err, gorm.ErrRecordNotFound) {
 		log.Println("Error:", err.Error())
-		return nil, errs.NewNotFound(fmt.Sprintf("Category with %d is not found", id))
+		return nil, errs.NewNotFound(fmt.Sprintf("Category with id %d is not found", id))
+	}
+
+	if err != nil {
+		log.Println("Error:", err.Error())
+		return nil, errs.NewInternalServerError(fmt.Sprintf("Failed to get category with id %d", id))
 	}
 
 	return &category, nil
@@ -59,10 +68,19 @@ func (c *categoryPG) UpdateCategory(oldCategory *entity.Category, newCategory *e
 }
 
 func (c *categoryPG) DeleteCategory(category *entity.Category) errs.MessageErr {
-	if err := c.db.Delete(category).Error; err != nil {
+
+	err := c.db.Delete(category).Error
+	if strings.Contains(err.Error(), gorm.ErrForeignKeyViolated.Error()) {
+		return errs.NewForeignkeyViolates(fmt.Sprintf("Category id %d has a reference to the task", category.ID))
+
+	}
+
+	if err != nil {
+
 		log.Println("Error:", err.Error())
 		return errs.NewInternalServerError(fmt.Sprintf("Failed to delete category with id %d", category.ID))
 	}
 
 	return nil
+
 }

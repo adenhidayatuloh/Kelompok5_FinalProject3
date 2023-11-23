@@ -75,3 +75,11 @@ func NewUnauthorized(message string) MessageErr {
 		ErrError:      "UNAUTHORIZED",
 	}
 }
+
+func NewForeignkeyViolates(message string) MessageErr {
+	return &MessageErrData{
+		ErrMessage:    message,
+		ErrStatusCode: http.StatusConflict,
+		ErrError:      "Foreign key Violated",
+	}
+}

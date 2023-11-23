@@ -1,6 +1,7 @@
 package taskpostgres
 
 import (
+	"errors"
 	"fmt"
 	"log"
 
@@ -40,9 +41,15 @@ func (t *taskPG) GetAllTasks() ([]entity.Task, errs.MessageErr) {
 func (t *taskPG) GetTaskByID(id uint) (*entity.Task, errs.MessageErr) {
 	var task entity.Task
 
-	if err := t.db.First(&task, id).Error; err != nil {
+	err := t.db.First(&task, id).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
 		log.Println("Error:", err.Error())
-		return nil, errs.NewNotFound(fmt.Sprintf("Task with %d is not found", id))
+		return nil, errs.NewNotFound(fmt.Sprintf("Task with id %d is not found", id))
+	}
+
+	if err != nil {
+		log.Println("Error:", err.Error())
+		return nil, errs.NewInternalServerError(fmt.Sprintf("Failed to get task with id %d", id))
 	}
 
 	return &task, nil
