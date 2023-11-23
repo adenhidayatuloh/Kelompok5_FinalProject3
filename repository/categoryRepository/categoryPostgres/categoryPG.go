@@ -70,12 +70,12 @@ func (c *categoryPG) UpdateCategory(oldCategory *entity.Category, newCategory *e
 func (c *categoryPG) DeleteCategory(category *entity.Category) errs.MessageErr {
 
 	err := c.db.Delete(category).Error
-	if strings.Contains(err.Error(), gorm.ErrForeignKeyViolated.Error()) {
-		return errs.NewForeignkeyViolates(fmt.Sprintf("Category id %d has a reference to the task", category.ID))
-
-	}
 
 	if err != nil {
+		if strings.Contains(err.Error(), gorm.ErrForeignKeyViolated.Error()) {
+			return errs.NewForeignkeyViolates(fmt.Sprintf("Category id %d has a reference to the task", category.ID))
+
+		}
 
 		log.Println("Error:", err.Error())
 		return errs.NewInternalServerError(fmt.Sprintf("Failed to delete category with id %d", category.ID))
