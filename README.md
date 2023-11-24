@@ -1,5 +1,8 @@
 # glng_ks08_Kelompok5_final_Project_3
 
+Link domain deployment :
+https://kelompok5-finalproject3.adaptable.app
+
 Admin data :
 FullName: "admin",
 Email: "admin@gmail.com",
